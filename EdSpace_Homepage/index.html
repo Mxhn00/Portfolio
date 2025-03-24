@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdSpace</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;
+      0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;
+      1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+
+        <!-- Navigation bar with drop down menu -->
+        <div class="nav-links" id="nav-links">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="">STARTSEITE</a></li>
+
+            <li>
+              <a href="">HOME &nbsp; <i class="fa fa-caret-down"></i></a>
+
+              <div class="dropdown_menu_1">
+                <ul>
+                  <li><a href="">XXXX</a></li>
+                  <li><a href="">XXXX</a></li>
+                  <li><a href="">XXXX</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="">ABOUT &nbsp; <i class="fa fa-caret-down"></i></a>
+
+              <div class="dropdown_menu_2">
+                <ul>
+                  <li><a href="">XXXX</a></li>
+                  <li><a href="">XXXX</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="">COURSE &nbsp; <i class="fa fa-caret-down"></i></a>
+
+              <div class="dropdown_menu_3">
+                <ul>
+                  <li><a href="">XXXX</a></li>
+                  <li><a href="">XXXX</a></li>
+                  <li><a href="">XXXX</a></li>
+                  <li><a href="">XXXX</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li><a href="">BLOG</a></li>
+
+            <li><a href="">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <!-- Background Video -->
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="bg_video"
+        src="images/background-video.mp4"
+        type="video/mp4"
+      >
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Text box main page  -->
+      <div class="center-wrapper">
+        <div class="text-box">
+          <h1>World Class Education</h1>
+          <p class="h1p1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nobis
+            id harum? Velit pariatur saepe molestias expedita quae repudiandae
+            veniam <br />
+            magni quidem sequi adipisci. Accusantium, dignissimos.
+          </p>
+          <a href="" class="btn-style">Visit us for more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+      var navLinks = document.getElementById("nav-links");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+
+    <!-- Courses We Offer -->
+    <section class="courses">
+      <h1>Courses We Offer</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quas
+        placeat nam!
+      </p>
+
+      <div class="row">
+        <div class="course-col">
+          <h3>Diploma</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            voluptate et distinctio dolorem quas sequi qui eos accusantium, a
+            aspernatur ullam omnis sed expedita nihil fugiat.
+          </p>
+        </div>
+
+        <div class="course-col">
+          <h3>Undergraduate</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            voluptate et distinctio dolorem quas sequi qui eos accusantium, a
+            aspernatur ullam omnis sed expedita nihil fugiat.
+          </p>
+        </div>
+
+        <div class="course-col">
+          <h3>Graduate</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            voluptate et distinctio dolorem quas sequi qui eos accusantium, a
+            aspernatur ullam omnis sed expedita nihil fugiat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Gloabal Campus -->
+    <section class="campus">
+      <h1>Our Global Campuses</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+      <div class="row">
+        <div class="campus-col">
+          <img src="images/london.png" />
+          <div class="layer">
+            <h3>LONDON</h3>
+          </div>
+        </div>
+
+        <div class="campus-col">
+          <img src="images/amsterdam.png" />
+          <div class="layer">
+            <h3>AMSTERDAM</h3>
+          </div>
+        </div>
+
+        <div class="campus-col">
+          <img src="images/newyork.png" />
+          <div class="layer">
+            <h3>NEW YORK</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Facilities -->
+    <section class="facilities">
+      <h1>Our Facilities</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+      <div class="row">
+        <div class="facilities-col">
+          <img src="images/library.png" />
+          <h3>World Class Library</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus dolorum eligendi consectetur?
+          </p>
+        </div>
+
+        <div class="facilities-col">
+          <img src="images/basketball.png" />
+          <h3>Large Sport Facilities</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus dolorum eligendi consectetur?
+          </p>
+        </div>
+
+        <div class="facilities-col">
+          <img src="images/cafeteria.png" />
+          <h3>Tasty and Healthy Food</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus dolorum eligendi consectetur?
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h1>What Our Students Say</h1>
+      <p class="testimonials-sh">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+
+      <div class="row">
+        <div class="testimonials-col">
+          <img src="images/user1.jpg" />
+
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              voluptate praesentium esse? Tempore officia facere similique
+              distinctio animi libero tempora tenetur, eius dolores eveniet.
+            </p>
+            <h3>Eleonor Garnier</h3>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="testimonials-col">
+          <img src="images/user2.jpg" />
+
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              voluptate praesentium esse? Tempore officia facere similique
+              distinctio animi libero tempora tenetur, eius dolores eveniet.
+            </p>
+            <h3>Martin Smith</h3>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enroll -->
+    <section class="enroll">
+      <h1>Apply For Various Courses From Anywhere In The World</h1>
+
+      <a href="" class="btn-style">EROLL NOW</a>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <h4>About Us</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+        cupiditate itaque quidem mollitia culpa <br />
+        vero facere inventore? Aut deleniti beatae praesentium provident!
+        Minima, ea!
+      </p>
+
+      <div class="icons">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+      </div>
+    </section>
+  </body>
+</html>
