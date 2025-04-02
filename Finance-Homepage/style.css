@@ -500,6 +500,10 @@ nav .fa-times {
     color: #e8e8e8;
 }
 
+.vision-col p {
+    margin-bottom: 40px;
+}
+
 .vision-col {
     flex-basis: 31%;
     border-radius: 10px;
