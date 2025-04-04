@@ -1,0 +1,91 @@
+* {
+    font-family:Cantarell, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-image: url(images/table.png);
+    background-size: cover;
+}
+
+h1 {
+    font-size: 46px;
+    font-weight: 600px;
+    color: goldenrod;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#message-el {
+    margin-bottom: 40px;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 160px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+#start-game-btn {
+    background-color: rgba(218, 165, 32, 0.782);
+    color: #016f32;
+    font-size: 18px;
+    font-weight: 900;
+    transition: color 0.5s;
+}
+
+#start-game-btn:hover {
+    color: white;
+}
+
+#draw-card-btn {
+    background-color: rgb(174, 161, 128);
+    color: #016f32;
+    font-size: 18px;
+    font-weight: 900;
+    transition: color 0.5s;
+}
+
+#draw-card-btn:hover {
+    color: white;
+}
+
+#stay-btn {
+    background-color: rgb(174, 161, 128);
+    color: #016f32;
+    font-size: 18px;
+    font-weight: 900;
+    transition: color 0.5s;
+}
+
+#stay-btn:hover {
+    color: white;
+}
+
+#add-funds-btn {
+    background-color: rgba(246, 255, 0, 0.5);
+    color: #016f32;
+    font-size: 18px;
+    font-weight: 900;
+    transition: color 0.5s;
+}
+
+#add-funds-btn:hover {
+    color: white;
+}
