@@ -123,7 +123,7 @@ function compareSum() {
     fundsEl.textContent = " $ " + playerFunds;
     messageEl.textContent = message;
     bet = 0;
-    betEl.textContent = bet;
+    betEl.textContent = " $ " + bet;
     betActive = false;
     stayActive = false;
 };
