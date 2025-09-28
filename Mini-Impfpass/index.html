@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini-Impfpass</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      input {
+        padding: 8px;
+        font-size: 1em;
+      }
+
+      button {
+        padding: 8px 14px;
+        margin-left: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .add-btn {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #eee;
+      }
+
+      .status-aktuell {
+        background-color: #c8e6c9; /* grün */
+        color: #256029;
+        font-weight: bold;
+      }
+
+      .status-faellig {
+        background-color: #ffcdd2; /* rot */
+        color: #b71c1c;
+        font-weight: bold;
+      }
+
+      .aktuell-btn {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .faellig-btn {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mein Mini-Impfpass</h1>
+
+    <div class="form-container">
+      <input type="text" id="impfungName" placeholder="Impfung eingeben" />
+      <button class="add-btn" onclick="addImpfung()">Hinzufügen</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Impfung</th>
+          <th>Status</th>
+          <th>Aktion</th>
+        </tr>
+      </thead>
+      <tbody id="impfTableBody">
+        <!-- Impfungen erscheinen hier -->
+      </tbody>
+    </table>
+
+    <div class="footer">
+      * Dies ist nur ein Demo-Projekt und ersetzt keinen offiziellen Impfpass.
+    </div>
+
+    <script>
+      let impfungCounter = 0;
+
+      function addImpfung() {
+        const nameInput = document.getElementById("impfungName");
+        const name = nameInput.value.trim();
+
+        impfungCounter++;
+        const tableBody = document.getElementById("impfTableBody");
+
+        // Neue Tabellenzeile erstellen
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td>${name}</td>
+        <td id="status-${impfungCounter}" class="status-faellig">fällig</td>
+        <td>
+          <button class="aktuell-btn" onclick="setStatus(${impfungCounter},'aktuell')">Aktuell</button>
+          <button class="faellig-btn" onclick="setStatus(${impfungCounter},'fällig')">Fällig</button>
+        </td>
+      `;
+
+        tableBody.appendChild(row);
+        nameInput.value = ""; // Eingabefeld leeren
+      }
+
+      function setStatus(id, status) {
+        const statusCell = document.getElementById("status-" + id);
+
+        if (status === "aktuell") {
+          statusCell.textContent = "aktuell";
+          statusCell.className = "status-aktuell";
+        } else {
+          statusCell.textContent = "fällig";
+          statusCell.className = "status-faellig";
+        }
+      }
+    </script>
+  </body>
+</html>
