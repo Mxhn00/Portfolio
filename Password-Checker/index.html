@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passwort-Checker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .strength {
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .weak {
+        background: #ffcdd2;
+        color: #b71c1c;
+      }
+
+      .medium {
+        background: #fff9c4;
+        color: #827717;
+      }
+
+      .strong {
+        background: #c8e6c9;
+        color: #256029;
+      }
+
+      ul {
+        font-size: 0.9em;
+        padding-left: 20px;
+      }
+
+      ul li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Passwort-Checker</h1>
+
+    <div class="container">
+      <input
+        type="password"
+        id="password"
+        placeholder="Passwort eingeben"
+        oninput="checkPassword()"
+      />
+      <div id="strengthMessage" class="strength">
+        Bitte ein Passwort eingeben
+      </div>
+      <ul>
+        <li id="length">Mindestens 8 Zeichen</li>
+        <li id="lowercase">Mindestens ein Kleinbuchstabe</li>
+        <li id="uppercase">Mindestens ein Großbuchstabe</li>
+        <li id="number">Mindestens eine Zahl</li>
+        <li id="special">Mindestens ein Sonderzeichen (!@#$%^&* etc.)</li>
+      </ul>
+    </div>
+
+    <script>
+      function checkPassword() {
+        const password = document.getElementById("password").value;
+        const strengthMessage = document.getElementById("strengthMessage");
+
+        let strength = 0;
+
+        // Anforderungen prüfen
+        const length = password.length >= 8;
+        const lowercase = /[a-z]/.test(password);
+        const uppercase = /[A-Z]/.test(password);
+        const number = /[0-9]/.test(password);
+        const special = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+        // Liste aktualisieren
+        document.getElementById("length").style.color = length
+          ? "green"
+          : "red";
+        document.getElementById("lowercase").style.color = lowercase
+          ? "green"
+          : "red";
+        document.getElementById("uppercase").style.color = uppercase
+          ? "green"
+          : "red";
+        document.getElementById("number").style.color = number
+          ? "green"
+          : "red";
+        document.getElementById("special").style.color = special
+          ? "green"
+          : "red";
+
+        // Stärke berechnen
+        if (length) strength++;
+        if (lowercase) strength++;
+        if (uppercase) strength++;
+        if (number) strength++;
+        if (special) strength++;
+
+        // Ausgabe
+        if (password.length === 0) {
+          strengthMessage.textContent = "Bitte ein Passwort eingeben";
+          strengthMessage.className = "strength";
+        } else if (strength <= 2) {
+          strengthMessage.textContent = "Schwach";
+          strengthMessage.className = "strength weak";
+        } else if (strength === 3 || strength === 4) {
+          strengthMessage.textContent = "Mittel";
+          strengthMessage.className = "strength medium";
+        } else {
+          strengthMessage.textContent = "Stark";
+          strengthMessage.className = "strength strong";
+        }
+      }
+    </script>
+  </body>
+</html>
